@@ -1,8 +1,14 @@
-#!/usr/bin/env node
+//const app = require('../src/app');
+//const port = process.env.PORT || '3000';
 
-/**
- * Module dependencies.
- */
+console.log(process.env.PORT || '3000');
+
+/*const http = require('http').Server(app);
+
+http.listen(port, () => {
+  console.log(`app listening on port ${port}`);
+});*/
+
 
 var app = require('../app');
 var debug = require('debug')('affinity-test-generator:server');

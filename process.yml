@@ -1,0 +1,5 @@
+apps:
+  - name   : site1
+    script : ./bin/www.js
+    watch  : true
+    ignore_watch : ['node_modules']

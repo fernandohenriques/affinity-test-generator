@@ -1,9 +1,11 @@
 {
   "name": "affinity-test-generator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "pm2 start process.yml && pm2 logs",
+    "start": "pm2 start process.yml",
+    "stop": "pm2 stop site1"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
