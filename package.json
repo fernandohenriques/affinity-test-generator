@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "pm2 start process.yml && pm2 logs",
+    "dev": "pm2 start process.yml && pm2 logs --no-daemon",
     "start": "pm2 start process.yml",
     "stop": "pm2 stop site1"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "dotenv": "^7.0.0",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
