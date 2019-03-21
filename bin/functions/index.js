@@ -19,7 +19,8 @@ module.exports = {
     }
   },
 
-  onListening: () => {
+  onListening: (server) => {
+    console.log(server);
     const addr = server.address();
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     debug('Listening on ' + bind);
