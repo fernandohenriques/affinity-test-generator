@@ -4,7 +4,7 @@
     "commonjs": true,
     "es6": true
   },
-  "extends": ["airbnb-base", "plugin:node/recommended"],
+  "extends": ["airbnb-base", "plugin:node/recommended", "plugin:unicorn/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -24,6 +24,7 @@
     "node/prefer-global/console": ["error", "always"],
     "node/prefer-global/process": ["error", "always"],
     "node/exports-style": ["error", "module.exports"],
-    "node/prefer-global/url-search-params": ["error", "always"]
+    "node/prefer-global/url-search-params": ["error", "always"],
+    "unicorn/filename-case": ["error", {"case": "kebabCase"}]
   }
 }

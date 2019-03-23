@@ -8,7 +8,7 @@ const log = require('./middlewares/log');
 const routes = require('./config/routes');
 const cors = require('./middlewares/cors');
 const sass = require('./middlewares/sass');
-const errorHandler = require('./middlewares/errorHandler');
+const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
 
