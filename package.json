@@ -14,12 +14,13 @@
     }
   },
   "lint-staged": {
-    "*.{js,ejs}": [
+    "*.js": [
       "./node_modules/.bin/eslint --fix .",
       "git add"
     ]
   },
   "dependencies": {
+    "pm2": "3.4.0",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -28,13 +29,13 @@
     "express": "~4.16.0",
     "helmet": "^3.16.0",
     "morgan": "~1.9.0",
+    "nedb": "^1.8.0",
     "node-sass-middleware": "0.11.0",
     "structure": "^1.3.2"
   },
   "devDependencies": {
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-ejs": "0.0.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
     "husky": "^1.3.1",
