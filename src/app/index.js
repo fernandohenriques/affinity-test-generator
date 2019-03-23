@@ -1,9 +1,10 @@
 const path = require('path');
+const helmet = require('helmet');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const log = require('./middlewares/log');
-//const db = require('./config/database');
+// const db = require('./config/database');
 const routes = require('./config/routes');
 const cors = require('./middlewares/cors');
 const sass = require('./middlewares/sass');
@@ -17,12 +18,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(log);
 app.use(cors);
 app.use(sass);
+app.use(helmet());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'src/public')));
-
-console.log(process.env.NODE_ENV);
 
 app.use('/', routes);
 app.use(errorHandler);
