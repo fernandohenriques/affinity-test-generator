@@ -1,10 +1,10 @@
-const db = require('../config/database');
+const db = require('../config/database')();
 
 module.exports = {
   saveTest: async (test) => {
     try {
       const newTest = await db.insert(test);
-      console.log(newTest);
+      return newTest;
     } catch (error) {
       throw error;
     }
