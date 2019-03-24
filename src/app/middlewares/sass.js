@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const sassMiddleware = require('node-sass-middleware');
 
@@ -8,7 +9,7 @@ module.exports = sassMiddleware({
   dest: path.join(publicPath, 'stylesheets'),
   indentedSyntax: true,
   sourceMap: true,
-  debug: true,
   prefix: '/stylesheets',
   outputStyle: 'compressed',
+  debug: process.env.NODE_ENV !== 'production',
 });

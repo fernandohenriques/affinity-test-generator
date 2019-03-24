@@ -8,6 +8,7 @@ const log = require('./middlewares/log');
 const routes = require('./config/routes');
 const cors = require('./middlewares/cors');
 const sass = require('./middlewares/sass');
+const postcss = require('./middlewares/post-css');
 const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
@@ -18,6 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(log);
 app.use(cors);
 app.use(sass);
+app.use(postcss);
 app.use(helmet());
 app.use(cookieParser());
 
