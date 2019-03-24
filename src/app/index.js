@@ -4,7 +4,6 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const log = require('./middlewares/log');
-// const db = require('./config/database');
 const routes = require('./config/routes');
 const cors = require('./middlewares/cors');
 const sass = require('./middlewares/sass');

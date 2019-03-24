@@ -57,3 +57,6 @@ typings/
 # compiled and compressed css
 src/public/stylesheets/*.css
 src/public/stylesheets/*.css.map
+
+# embeded database
+src/app/database
