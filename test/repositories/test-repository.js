@@ -1,9 +1,11 @@
 /* global describe, beforeEach, it */
 const { assert } = require('chai');
 const db = require('../../src/app/config/database')('test');
-const { saveTest } = require('../../src/app/repositories/test-repository');
+const TestRepository = require('../../src/app/repositories/test-repository');
 
 describe('TestRepository', () => {
+  const { saveTest } = new TestRepository(db);
+
   beforeEach(async () => {
     await new Promise(resolve => db.remove({}, { multi: true }, () => resolve()));
   });
