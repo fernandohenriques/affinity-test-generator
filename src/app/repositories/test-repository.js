@@ -3,8 +3,12 @@ const db = require('../config/database')();
 module.exports = {
   saveTest: async (test) => {
     try {
-      const newTest = await db.insert(test);
-      return newTest;
+      return await new Promise((resolve, reject) => {
+        db.insert(test, (err, doc) => {
+          if (err) reject(err);
+          resolve(doc);
+        });
+      });
     } catch (error) {
       throw error;
     }

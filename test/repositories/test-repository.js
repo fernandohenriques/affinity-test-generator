@@ -1,13 +1,19 @@
-/* global it, describe */
+/* global describe, beforeEach, it */
 const { assert } = require('chai');
+const db = require('../../src/app/config/database')('test');
 const { saveTest } = require('../../src/app/repositories/test-repository');
 
 describe('TestRepository', () => {
+  beforeEach(async () => {
+    await new Promise(resolve => db.remove({}, { multi: true }, () => resolve()));
+  });
+
   describe('saveTest', () => {
-    it('should return a test instance if enter a valid test object', async () => {
-      const test = await saveTest({ title: 'Teste de Presidenciáveis - 2022' });
-      console.log(test);
-      assert.equal('Hello'.length, 5);
+    it('should return a valid test instance with a right title', async () => {
+      const titleMock = 'Teste de Presidenciáveis - 2022';
+      const test = await saveTest({ title: titleMock });
+      assert.equal(typeof test, 'object');
+      assert.equal(test.title, titleMock);
     });
   });
 });
