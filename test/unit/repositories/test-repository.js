@@ -1,9 +1,9 @@
 /* global describe, beforeEach, it */
 const { assert } = require('chai');
-const slugify = require('../../src/app/helpers/slugify');
-const { validTest, unvalidTest } = require('../mocks/test');
-const db = require('../../src/app/config/database')('test');
-const TestRepository = require('../../src/app/repositories/test-repository');
+const slugify = require('../../../src/app/helpers/slugify');
+const { validTest, unvalidTest } = require('../../mocks/test');
+const db = require('../../../src/app/config/database')('test');
+const TestRepository = require('../../../src/app/repositories/test-repository');
 
 describe('TestRepository', () => {
   const { saveTest } = new TestRepository(db);
