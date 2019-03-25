@@ -1,7 +1,6 @@
 const { attributes } = require('structure');
 
 const Persona = attributes({
-  id: Number,
   name: {
     type: String,
     required: true,

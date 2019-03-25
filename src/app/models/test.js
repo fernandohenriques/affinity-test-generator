@@ -4,12 +4,14 @@ const Question = require('./question');
 const Persona = require('./persona');
 
 const Test = attributes({
-  id: Number,
-  name: {
+  title: {
     type: String,
+    minLength: 15,
     required: true,
   },
+  slug: String,
   banner: String,
+  description: String,
   category: {
     type: 'Category',
     required: true,

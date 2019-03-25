@@ -1,7 +1,6 @@
 const { attributes } = require('structure');
 
 const Question = attributes({
-  id: Number,
   title: {
     type: String,
     required: true,
