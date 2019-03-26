@@ -18,9 +18,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(log);
 app.use(cors);
 app.use(sass);
-app.use(postcss);
 app.use(helmet());
 app.use(cookieParser());
+app.use('/stylesheets/**/*.css', postcss);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
